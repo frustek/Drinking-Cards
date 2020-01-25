@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, Text, View, Button, Image} from 'react-native';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -9,10 +9,14 @@ const instructions = Platform.select({
 export default class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+      <View style={{flex: 1, backgroundColor: 'black'}}>
+        <View style={{flex: 1}}></View>
+        <View style={{flex: 12, }}>
+          <Image
+            style={{flex: 1, resizeMode: 'stretch'}}
+            source={{uri: 'data:image/png;base64,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'}}/>
+        </View>
+        <View style={{flex: 1}}><Button title="Next"/></View>
       </View>
     );
   }
@@ -23,7 +27,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#a5a5a5',
   },
   welcome: {
     fontSize: 20,
@@ -32,7 +36,7 @@ const styles = StyleSheet.create({
   },
   instructions: {
     textAlign: 'center',
-    color: '#333333',
+    color: '#f7efec',
     marginBottom: 5,
   },
 });
